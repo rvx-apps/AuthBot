@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telegram Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+  <h1>Welcome to RvXPlayer</h1>
+  <p id="status">Logging in...</p>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const tgid = urlParams.get('id');
+  const status = document.getElementById('status');
+
+  if (tgid) {
+    // Save in localStorage
+    localStorage.setItem('telegramId', tgid);
+    status.textContent = "✅ Logged in successfully!";
+  } else {
+    status.textContent = "❌ Invalid login link!";
+  }
+</script>
+
+</body>
+</html>
