@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   });
 
   // 2️⃣ Send login link
-  const loginLink = `https://your-vercel-domain.vercel.app/login.html?id=${chatId}`;
+  const loginLink = `https://authbot-eta.vercel.app/login.html?id=${chatId}`;
 
   await fetch(`https://api.telegram.org/bot${process.env.TG_BOT_TOKEN}/sendMessage`, {
     method: 'POST',
